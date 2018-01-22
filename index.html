@@ -1,0 +1,156 @@
+---
+layout: angel--empty
+permalink: feature/
+title: Add a New Feature
+products:
+  - name: Nexus
+    slug: nexus
+    collector: nil
+    id: 10800
+  - name: Perspective (Full)
+    slug: psp
+    collector: 44814eae
+    id: 10801
+  - name: Perspective (Lite)
+    slug: psp-lite
+    collector: 63e85da4
+    id: 10802
+  - name: Balance
+    slug: balance-round
+    collector: b31d23d7
+    id: 10803
+  - name: Pendulum
+    slug: pendulum
+    collector: 7c105ec4
+    id: 10804
+  - name: Broadcast
+    slug: broadcast
+    collector: 9730f585
+    id: 10805
+  - name: Watchsted
+    slug: watchsted
+    collector: nil
+    id: 10806
+  - name: Observatory
+    slug: observatory
+    collector: fba991fb
+    id: 10843
+---
+
+
+
+<style>
+    /*.sharepoint-nav{display: none;}
+    header{display: none;}
+    .page-nav{display:none;}*/
+
+    h2{text-transform:none;
+    font-family: "Open Sans",Arial,Helvetica,sans-serif;
+    }
+    h3,h4{text-transform:none;
+    font-family: "Open Sans",Arial,Helvetica,sans-serif;
+    margin-bottom: 0.75rem;
+    }
+    .page-content{
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    blockquote {
+        margin-left: 2em;
+        padding-left: 1em;
+        border-left: 4px solid grey;
+        font-style: italic;
+    }
+</style>
+
+
+{% for product in page.products %}
+  <script type="text/javascript" src="https://angels.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-rcclw8/b/7/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-UK&collectorId={{product.collector}}"></script>
+{% endfor %}
+
+     <script type="text/javascript">
+
+        var months = new Array(12);
+        months[0] = "Jan";
+        months[1] = "Feb";
+        months[2] = "Mar";
+        months[3] = "Apr";
+        months[4] = "May";
+        months[5] = "Jun";
+        months[6] = "Jul";
+        months[7] = "Aug";
+        months[8] = "Sep";
+        months[9] = "Oct";
+        months[10] = "Nov";
+        months[11] = "Dec";
+
+        var current_date = new Date();
+        current_date.setDate(current_date.getDate());
+        month_value = current_date.getMonth();
+        day_value = current_date.getDate();
+        year_value = current_date.getFullYear();
+
+        var today = day_value +"/"+months[month_value]+"/"+year_value
+
+
+        window.ATL_JQ_PAGE_PROPS = $.extend(window.ATL_JQ_PAGE_PROPS, {
+
+{% for product in page.products %}
+          {% if product.name == 'Nexus'%}{% else %},{% endif %}
+            // ==== feedback collector ====
+            '{{product.collector}}' : {
+
+            // === custom trigger function ===
+
+      "triggerFunction": function(showCollectorDialog) {
+          //Requires that jQuery is available!
+          jQuery("#my{{product.slug}}Trigger").click(function(e) {
+              e.preventDefault();
+              showCollectorDialog();
+          });
+      },
+    // ==== we add the code below to set the field values ====
+    fieldValues: {
+        customfield_11906 : today,
+        customfield_11901: '{{product.id}}',
+        customfield_10002: 'Angel'
+    }
+  }
+    {% endfor %}
+});</script>
+
+      <style type="text/css">
+          .atlwdg-popup{
+            max-height: calc(100%) !important;
+          }
+
+        @media screen and (max-width: 820px){
+        .atlwdg-popup {
+            max-width: 810px;
+            width: 100% !important;
+        }}
+      </style>
+
+
+
+
+
+
+        <h2>Feature Requests</h2>
+<div class="text--center">
+<div class="grid">
+        {% for product in page.products %}<div class="grid__item one-quarter lap-one-half palm-one-whole push--bottom">
+          <a href="#" id="my{{product.slug}}Trigger" class="{% if product.collector == 'nil' %}muted{% endif %}">
+            <span class="logo beta logo--thin logo--{{product.slug}}">
+            <img title="{{product.name}}  Logo" src="http://www.angelsolutions.co.uk/wp-content/themes/angel/images/products/{{product.slug}}.svg" alt="{{product.name}} Logo">
+            <span class="display--block gamma">{{product.name}}</span>
+             <span class="gamma"><span class='btn btn-primary'>+ Feature</a></span>
+            </span>
+          </span>
+          </a>
+            </div>{% endfor %}
+        </div>
+</div>
+
+

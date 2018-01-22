@@ -1,0 +1,55 @@
+_site
+docs/reports/epas
+_data/sensitive
+.sass-cache
+node_modules
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+_config.yml
+secrets.json
+*.yml
+.jekyll-metadata
+2016/files/sayagata-400px-blue.png
+2016/files/angel-logo.png
+2016/files/liverpool-skyline-black-silhouette.svg
+2016/files/liverpool-skyline-blue-silhouette.svg
+Images/can-access-cla.PNG
+Images/vsh-user-type.PNG
+Images/cla-report-header-bar.PNG
+printable-form-test/index.html
+_layouts/psp--sales/print-layout.html

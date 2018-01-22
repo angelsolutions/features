@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+  {% include head.html %}
+
+  <body class="home">
+    <div class="page-form">
+      <div class="page-wrapper {% if page.theme %} {{page.themeid}} {% else %} theme--angel {% endif %}">
+        {% include header.html %}
+        <div class="page-content">
+          <div class="page-width">{{ content }}</div>
+        </div>
+      </div>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

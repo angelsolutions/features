@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+  {% include head.html %}
+
+  <body class="home">
+    <div class="page-form">
+
+        {{ content }}
+
+    </div>
+      {% if page.custom-js %}
+      {% for customjs in page.custom-js %}
+        <script src="{{ site.baseurl }}/js/{{customjs}}.js" ></script>
+      {% endfor %}
+    {% endif %}
+  <script>$("img.lazy").lazyload({
+    skip_invisible : true
+    // threshold : 200
+});</script>
+  </body>
+</html>

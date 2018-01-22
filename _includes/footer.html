@@ -1,0 +1,27 @@
+<footer class="group">
+  <div class="page-width">
+        <div class="grid">
+                <div class="grid__item two-thirds below-desk-one-whole">
+                    <p class="brand-face--condensed caps gamma flush">Call: <strong>0845 833 0933</strong><span class="push-half--sides">|</span>Fax: <strong>0845 833 8561</strong></p>
+                        <ul class="nav footer__social-links">
+                            <li><a href="http://www.angelsolutions.co.uk/twitter" title="Follow us on Twitter"><span class="typicons--twitter-circled"></span></a></li>
+                            <li><a href="https://www.facebook.com/AngelSolutionsLtd/" target="_blank" title="Like us Facebook"><span class="typicons--facebook-circled-1"></span></a></li>
+                            <li class="push-half--right"><a href="https://www.linkedin.com/company/angel-solutions-ltd" target="_blank" title="See us on LinkedIn"><span class="typicons--linkedin-circled-1"></span></a></li>
+                        </ul>
+                        <p class="soft-half--top flush--bottom"><span class="footer__copy">&copy; Angel Design, UX &amp; Marketing {{ site.time | date: '%Y' }}<span class="push-half--sides">|</span></span><a href="{{site.baseurl}}/sitemap">Sitemap</a></p>
+
+                </div><!--
+             --><div class="grid__item one-third below-desk-one-whole">
+                    <div class="footer__link--microsoft">
+                        <a href="http://www.angelsolutions.co.uk/partners/microsoft">
+                        <span class="ir">Microsoft Certified</span></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</footer>
+  {% if page.custom-js %}
+      {% for customjs in page.custom-js %}
+        <script src="{{ site.baseurl }}/js/{{customjs}}.js" ></script>
+      {% endfor %}
+    {% endif %}
